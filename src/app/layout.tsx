@@ -49,6 +49,13 @@ export const metadata: Metadata = {
   // ],
 };
 
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+})
+
 export default function RootLayout({
   children,
 }: {
@@ -56,7 +63,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>{children}</body>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }
